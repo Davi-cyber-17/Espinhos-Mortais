@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050812">
+<title>Espinhos Mortais</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+
+  <section id="menu" class="screen active">
+    <h1>Espinhos<br>Mortais</h1>
+    <button id="btnOnline" class="btn">Modo Online</button>
+    <button id="btnLocal" class="btn alt">Modo Local</button>
+    <p class="msg">Ande sem parar pelo mapa. Os espinhos vêm de um lado só: esconda-se atrás das paredes, que bloqueiam a passagem deles.</p>
+    <p class="msg kbd">No computador: WASD ou setas. No celular: joystick na tela.</p>
+  </section>
+
+  <section id="local" class="screen">
+    <h2>Modo Local</h2>
+    <p class="msg">Quantas pessoas jogam neste aparelho? As vagas que sobrarem ficam com robôs.</p>
+    <div class="lbl">Humanos</div>
+    <div class="row" id="humCount"></div>
+    <div class="lbl">Robôs</div>
+    <div class="row" id="botCount"></div>
+    <p id="localMsg" class="msg"></p>
+    <button id="btnLocalStart" class="btn">Começar</button>
+    <button class="btn ghost back">Voltar</button>
+  </section>
+
+  <section id="online" class="screen">
+    <h2>Modo Online</h2>
+    <p class="msg">Funciona entre celular, tablet e computador.</p>
+    <input id="name" maxlength="10" placeholder="Seu nome" autocomplete="off">
+    <button id="btnCreate" class="btn">Criar sala</button>
+    <div class="msg">ou entre em uma sala</div>
+    <input id="code" maxlength="4" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" spellcheck="false">
+    <button id="btnJoin" class="btn alt">Entrar</button>
+    <p id="onlineMsg" class="msg"></p>
+    <button class="btn ghost back">Voltar</button>
+  </section>
+
+  <section id="lobby" class="screen">
+    <h2>Sala <span id="roomCode"></span></h2>
+    <p class="msg">Passe o código ou o link para os amigos. De 2 a 6 jogadores.</p>
+    <ul id="plist"></ul>
+    <button id="btnCopy" class="btn alt">Copiar link da sala</button>
+    <button id="btnStart" class="btn">Iniciar jogo</button>
+    <p id="lobbyMsg" class="msg"></p>
+    <button id="btnLeave" class="btn ghost">Sair da sala</button>
+  </section>
+
+  <section id="game" class="screen">
+    <div class="side top" id="topBar"></div>
+    <div id="boardWrap">
+      <canvas id="cv"></canvas>
+      <div id="hud"><div id="wave"></div><div id="status"></div><div id="bar"><i></i></div></div>
+      <button id="btnQuit" aria-label="Sair da partida">✕</button>
+      <div id="stick" aria-label="Joystick"><i></i></div>
+    </div>
+    <div class="side bottom" id="botBar"></div>
+    <div id="overlay"></div>
+  </section>
+
+</main>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
